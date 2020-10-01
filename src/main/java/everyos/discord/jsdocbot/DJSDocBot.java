@@ -77,7 +77,7 @@ public class DJSDocBot {
             					return channel.createEmbed(spec->{
             						spec.setTitle(finfo.get("name").getAsString());
             						spec.setDescription(finfo.get("description").getAsString());
-									spec.setColor(Color.WHITE);
+									spec.setColor(Color.of(85,57,204));
 									spec.addField("Location", metaFrom(finfo.get("meta").getAsJsonObject()), false);
             						
             						if (finfo.has("construct")) {
