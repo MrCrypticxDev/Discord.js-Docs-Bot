@@ -16,6 +16,7 @@ import everyos.discord.jsdocbot.util.UnirestUtil;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+import discord4j.rest.util.Color;
 
 public class DJSDocBot {
 	public static void main(String[] args) {
@@ -76,7 +77,8 @@ public class DJSDocBot {
             					return channel.createEmbed(spec->{
             						spec.setTitle(finfo.get("name").getAsString());
             						spec.setDescription(finfo.get("description").getAsString());
-            						spec.addField("Location", metaFrom(finfo.get("meta").getAsJsonObject()), false);
+									spec.setColor(Color.WHITE);
+									spec.addField("Location", metaFrom(finfo.get("meta").getAsJsonObject()), false);
             						
             						if (finfo.has("construct")) {
             							JsonObject construct = finfo.get("construct").getAsJsonObject();
