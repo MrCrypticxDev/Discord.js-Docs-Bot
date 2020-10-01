@@ -47,7 +47,7 @@ client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'user-logs');
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
-    channel.send(`Welcome to the Discord.js Underground Community, Thanks for joining with us! ${member}`);
+    channel.send(`YOUR_STATUS, Thanks for joining with us! ${member}`);
 });
     
 
@@ -76,4 +76,4 @@ client.on('message', message => {
     
     }
 })
-client.login('NzE1MzY5Njg1Njc1NDA5NDYw.XuWMxg.UEZgs9nAkv7tRLbxLnVGGv1o2L8');
+client.login('YOUR_DISCRD_BOT_TOKEN');
