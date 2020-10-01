@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '-'
-const Games = [`Docs Bot | -help`, `Discord.js Underground Community`]
+const Games = [`Docs Bot | -help`, `YOUR_STATUS`]
     setInterval(() => { client.user.setActivity(`${Games[Math.floor(Math.random() * Games.length)]}`) }, 10000)
 const Constants = require('discord.js/src/util/Constants.js')
 Constants.DefaultOptions.ws.properties.$browser = `Discord iOS`
