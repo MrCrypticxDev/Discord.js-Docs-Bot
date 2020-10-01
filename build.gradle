@@ -38,8 +38,8 @@ task run(type: JavaExec) {
   group = 'Run'
   description = 'Runs the app'
   
-  //environment "DJS_KEY", "NzA1ODAwNTQ5NTU1MTA5OTY4.XtMPAA.nyMW5_HDNbOf7YCIm0Zg1XjzD70" //dev
-  environment "DJS_KEY", "NzE1MzY5Njg1Njc1NDA5NDYw.Xs8N7w._RkqlotRTNHIF7Ax0Co5FtL9BP4"
+  //environment "DJS_KEY", "YOUR_BOT_TOKEN_HERE" //dev
+  environment "DJS_KEY", "YOUR_BOT_TOKEN_HERE"
   
   classpath sourceSets.main.runtimeClasspath
   main = "everyos.discord.jsdocbot.DJSDocBot"
