@@ -1,0 +1,46 @@
+plugins {
+	id 'com.github.johnrengelman.shadow' version '5.0.0'
+	id 'java'
+	id 'java-library'
+}
+
+version '0.0.1'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+	maven { url 'https://jitpack.io' }
+	jcenter()
+}
+dependencies {
+	implementation 'com.discord4j:discord4j-core:3.1.0-SNAPSHOT'
+	implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.mashape.unirest:unirest-java:1.4.9'
+    implementation 'org.slf4j:slf4j-nop:1.7.25'
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'eclipse'
+
+jar {
+  manifest {
+    attributes("Main-Class": "everyos.discord.jsdocbot.DJSDocBot")
+  }
+}
+
+shadowJar {
+   classifier = null
+}
+
+task run(type: JavaExec) {
+  group = 'Run'
+  description = 'Runs the app'
+  
+  //environment "DJS_KEY", "NzA1ODAwNTQ5NTU1MTA5OTY4.XtMPAA.nyMW5_HDNbOf7YCIm0Zg1XjzD70" //dev
+  environment "DJS_KEY", "NzE1MzY5Njg1Njc1NDA5NDYw.XtWTGg.oTLD6cypeUjxPlYxoQlhSeczF6E"
+  
+  classpath sourceSets.main.runtimeClasspath
+  main = "everyos.discord.jsdocbot.DJSDocBot"
+}
